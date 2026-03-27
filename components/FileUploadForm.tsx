@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Button } from "@heroui/button";
-import { Progress } from "@heroui/progress";
-import { Input } from "@heroui/input";
+import { Button } from "@heroui/react";
+import { Progress } from "@heroui/react";
+import { Input } from "@heroui/react";
 import {
   Upload,
   X,
@@ -12,14 +12,14 @@ import {
   FolderPlus,
   ArrowRight,
 } from "lucide-react";
-import { addToast } from "@heroui/toast";
+import { addToast } from "@heroui/react";
 import {
   Modal,
   ModalContent,
   ModalHeader,
   ModalBody,
   ModalFooter,
-} from "@heroui/modal";
+} from "@heroui/react";
 import axios from "axios";
 
 interface FileUploadFormProps {

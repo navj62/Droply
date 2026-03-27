@@ -7,10 +7,10 @@ import { useSignIn } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { z } from "zod";
-import { Button } from "@heroui/button";
-import { Input } from "@heroui/input";
-import { Card, CardBody, CardHeader, CardFooter } from "@heroui/card";
-import { Divider } from "@heroui/divider";
+import { Button } from "@heroui/react";
+import { Input } from "@heroui/react";
+import { Card, CardBody, CardHeader, CardFooter } from "@heroui/react";
+import { Divider } from "@heroui/react";
 import { Mail, Lock, AlertCircle, Eye, EyeOff } from "lucide-react";
 import { signInSchema } from "@/schemas/signInSchema";
 

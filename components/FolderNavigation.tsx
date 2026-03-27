@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUpFromLine } from "lucide-react";
-import { Button } from "@heroui/button";
+import { Button } from "@heroui/react";
 
 interface FolderNavigationProps {
   folderPath: Array<{ id: string; name: string }>;

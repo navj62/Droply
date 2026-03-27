@@ -1,7 +1,7 @@
 "use client";
 
 import { File, Star, Trash } from "lucide-react";
-import { Tabs, Tab } from "@heroui/tabs";
+import { Tabs, Tab } from "@heroui/react";
 import Badge from "@/components/ui/Badge";
 import type { File as FileType } from "@/lib/db/schema";
 

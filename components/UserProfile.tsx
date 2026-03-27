@@ -1,11 +1,11 @@
 "use client";
 
 import { useUser, useClerk } from "@clerk/nextjs";
-import { Button } from "@heroui/button";
-import { Card, CardBody, CardHeader, CardFooter } from "@heroui/card";
-import { Spinner } from "@heroui/spinner";
-import { Avatar } from "@heroui/avatar";
-import { Divider } from "@heroui/divider";
+import { Button } from "@heroui/react";
+import { Card, CardBody, CardHeader, CardFooter } from "@heroui/react";
+import { Spinner } from "@heroui/react";
+import { Avatar } from "@heroui/react";
+import { Divider } from "@heroui/react";
 import Badge from "@/components/ui/Badge";
 import { useRouter } from "next/navigation";
 import { Mail, User, LogOut, Shield, ArrowRight } from "lucide-react";

@@ -1,7 +1,7 @@
-import { Button } from "@heroui/button";
+import { Button } from "@heroui/react";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
-import { Card, CardBody } from "@heroui/card";
+import { Card, CardBody } from "@heroui/react";
 import {
   CloudUpload,
   Shield,

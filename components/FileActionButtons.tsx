@@ -1,7 +1,7 @@
 "use client";
 
 import { RefreshCw, Trash } from "lucide-react";
-import { Button } from "@heroui/button";
+import { Button } from "@heroui/react";
 
 interface FileActionButtonsProps {
   activeTab: string;

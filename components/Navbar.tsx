@@ -9,9 +9,9 @@ import {
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
-} from "@heroui/dropdown";
-import { Avatar } from "@heroui/avatar";
-import { Button } from "@heroui/button";
+} from "@heroui/react";
+import { Avatar } from "@heroui/react";
+import { Button } from "@heroui/react";
 import { useState, useEffect, useRef } from "react";
 
 interface SerializedUser {

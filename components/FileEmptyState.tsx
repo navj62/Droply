@@ -1,7 +1,7 @@
 "use client";
 
 import { File } from "lucide-react";
-import { Card, CardBody } from "@heroui/card";
+import { Card, CardBody } from "@heroui/react";
 
 interface FileEmptyStateProps {
   activeTab: string;

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
-import { Card, CardBody, CardHeader } from "@heroui/card";
-import { Tabs, Tab } from "@heroui/tabs";
+import { Card, CardBody, CardHeader } from "@heroui/react";
+import { Tabs, Tab } from "@heroui/react";
 import { FileUp, FileText, User } from "lucide-react";
 import FileUploadForm from "@/components/FileUploadForm";
 import FileList from "@/components/FileList";

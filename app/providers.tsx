@@ -6,7 +6,7 @@ import { HeroUIProvider } from "@heroui/system";
 import { useRouter } from "next/navigation";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ImageKitProvider } from "imagekitio-next";
-import { ToastProvider } from "@heroui/toast";
+import { ToastProvider } from "@heroui/react";
 import { createContext, useContext } from "react";
 
 export interface ProvidersProps {

@@ -9,11 +9,11 @@ import {
   TableBody,
   TableRow,
   TableCell,
-} from "@heroui/table";
-import { Divider } from "@heroui/divider";
-import { Tooltip } from "@heroui/tooltip";
-import { Card } from "@heroui/card";
-import { addToast } from "@heroui/toast";
+} from "@heroui/react";
+import { Divider } from "@heroui/react";
+import { Tooltip } from "@heroui/react";
+import { Card } from "@heroui/react";
+import { addToast } from "@heroui/react";
 import { formatDistanceToNow, format } from "date-fns";
 import type { File as FileType } from "@/lib/db/schema";
 import axios from "axios";
