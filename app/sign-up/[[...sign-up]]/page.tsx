@@ -1,26 +1,29 @@
-import SignUpForm from "@/components/SignUpForm";
-import { CloudUpload } from "lucide-react";
-import Link from "next/link";
-import Navbar from "@/components/Navbar";
+import { SignUp } from "@clerk/nextjs";
+import AuthShell from "@/components/AuthShell";
 
 export default function SignUpPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-      {/* Use the unified Navbar component */}
-      <Navbar />
-
-      <main className="flex-1 flex justify-center items-center p-6">
-        <SignUpForm />
-      </main>
-
-      {/* Dark mode footer */}
-      <footer className="bg-gray-900 text-white py-4">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} Droply. All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
+    <AuthShell
+      title="Create your account"
+      subtitle="Set up your Droply account and start uploading in minutes."
+    >
+      <SignUp
+        path="/sign-up"
+        routing="path"
+        signInUrl="/sign-in"
+        forceRedirectUrl="/dashboard"
+        appearance={{
+          elements: {
+            card: "shadow-none border border-default-200 bg-default-50",
+            headerTitle: "text-default-900",
+            headerSubtitle: "text-default-500",
+            formButtonPrimary: "bg-primary hover:bg-primary-600 text-white",
+            formFieldInput:
+              "bg-default-100 border-default-200 focus:border-primary",
+            footerActionLink: "text-primary hover:text-primary-600",
+          },
+        }}
+      />
+    </AuthShell>
   );
 }
