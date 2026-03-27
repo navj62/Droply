@@ -31,6 +31,7 @@ export default function SignUpForm() {
   const [verificationError, setVerificationError] = useState<string | null>(
     null
   );
+  const [isResendingCode, setIsResendingCode] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -55,7 +56,7 @@ export default function SignUpForm() {
 
     try {
       await signUp.create({
-        emailAddress: data.email,
+        emailAddress: data.email.trim(),
         password: data.password,
       });
 
@@ -77,13 +78,17 @@ export default function SignUpForm() {
   ) => {
     e.preventDefault();
     if (!isLoaded || !signUp) return;
+    if (!verificationCode.trim()) {
+      setVerificationError("Please enter the verification code.");
+      return;
+    }
 
     setIsSubmitting(true);
     setVerificationError(null);
 
     try {
       const result = await signUp.attemptEmailAddressVerification({
-        code: verificationCode,
+        code: verificationCode.trim(),
       });
 
       if (result.status === "complete") {
@@ -103,6 +108,24 @@ export default function SignUpForm() {
       );
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const resendVerificationCode = async () => {
+    if (!signUp) return;
+    setIsResendingCode(true);
+    setVerificationError(null);
+    try {
+      await signUp.prepareEmailAddressVerification({
+        strategy: "email_code",
+      });
+    } catch (error: any) {
+      setVerificationError(
+        error.errors?.[0]?.message ||
+          "Could not resend verification code. Please try again."
+      );
+    } finally {
+      setIsResendingCode(false);
     }
   };
 
@@ -161,16 +184,12 @@ export default function SignUpForm() {
             <p className="text-sm text-default-500">
               Didn't receive a code?{" "}
               <button
-                onClick={async () => {
-                  if (signUp) {
-                    await signUp.prepareEmailAddressVerification({
-                      strategy: "email_code",
-                    });
-                  }
-                }}
+                onClick={resendVerificationCode}
                 className="text-primary hover:underline font-medium"
+                type="button"
+                disabled={isResendingCode}
               >
-                Resend code
+                {isResendingCode ? "Resending..." : "Resend code"}
               </button>
             </p>
           </div>

@@ -41,7 +41,7 @@ export default function SignInForm() {
 
     try {
       const result = await signIn.create({
-        identifier: data.identifier,
+        identifier: data.identifier.trim(),
         password: data.password,
       });
 
@@ -88,12 +88,12 @@ export default function SignInForm() {
               htmlFor="identifier"
               className="text-sm font-medium text-default-900"
             >
-              Email
+              Email or username
             </label>
             <Input
               id="identifier"
-              type="email"
-              placeholder="your.email@example.com"
+              type="text"
+              placeholder="your.email@example.com or username"
               startContent={<Mail className="h-4 w-4 text-default-500" />}
               isInvalid={!!errors.identifier}
               errorMessage={errors.identifier?.message}
